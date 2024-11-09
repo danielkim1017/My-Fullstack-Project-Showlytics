@@ -1,4 +1,95 @@
 ** This text file is the documentation of my completion through the React Course on Freecodecamp **
 Useful for implementing the user interface for my full stack project, Showlytics, and have for future reference
 
-1)
+#1 - Defining a constant JSX
+const JSX = <h1>Hello JSX!</h1>;
+
+#2 - Div Element
+const JSX = (
+     <div>
+       <h1>Header text</h1>
+       <p>This is a paragraph</p>
+       <ul>
+       <li>Apples</li>
+       <li>Oranges</li>
+       <li>Bananas</li>
+     </ul>
+     </div>
+);
+
+#3 - Comments in JSX {/* */}
+const JSX = (
+  <div>
+  {/* Random comment*/}
+    <h1>This is a block of JSX</h1>
+    <p>Here's a subtitle</p>
+  </div>
+);
+
+#4 - Rendering HTML Elements to the DOM
+ReactDOM.render(JSX, document.getElementById('challenge-node'))
+
+#5 - Defining an HTML Class in JSX
+const JSX = (
+  <div className = 'myDiv'>
+    <h1>Add a class to this div</h1>
+  </div>
+);
+
+#6 - Self-Closing JSX Tags
+const JSX = (
+  <div>
+    <h2>Welcome to React!</h2> <br />
+    <p>Be sure to close all tags!</p>
+    <hr />
+  </div>
+);
+
+#7 - Creating a Stateless Functional Component
+const MyComponent = function() {
+  return (
+    <div> 'Hello' </div>
+  );
+};
+
+#8 - Creating a Component w/ the ES6 Class Syntax
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <div>
+      <h1>Hello React!</h1>
+      </div>
+    )
+  }
+};
+
+#9 - Creating a Component with Composition
+const ChildComponent = () => {
+  return (
+    <div>
+      <p>I am the child</p>
+    </div>
+  );
+};
+
+class ParentComponent extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <div>
+        <h1>I am the parent</h1>
+          <ChildComponent />
+      </div>
+    );
+  }
+};
+
+#10 - Using React to Render Nested Components
+
+
+
