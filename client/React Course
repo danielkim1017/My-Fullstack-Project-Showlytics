@@ -90,6 +90,118 @@ class ParentComponent extends React.Component {
 };
 
 #10 - Using React to Render Nested Components
+const TypesOfFruit = () => {
+  return (
+    <div>
+      <h2>Fruits:</h2>
+      <ul>
+        <li>Apples</li>
+        <li>Blueberries</li>
+        <li>Strawberries</li>
+        <li>Bananas</li>
+      </ul>
+    </div>
+  );
+};
+
+const Fruits = () => {
+  return (
+    <div>
+      <TypesOfFruit/>
+    </div>
+  );
+};
+
+class TypesOfFood extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    return (
+      <div>
+        <h1>Types of Food:</h1>
+          <Fruits/>
+      </div>
+    );
+  }
+};
+
+#11 - Composing React Components
+class Fruits extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <div>
+        <h2>Fruits:</h2>
+          <NonCitrus />
+          <Citrus />
+      </div>
+    );
+  }
+};
+
+class TypesOfFood extends React.Component {
+  constructor(props) {
+     super(props);
+  }
+  render() {
+    return (
+      <div>
+        <h1>Types of Food:</h1>
+        <Fruits />
+        <Vegetables />
+      </div>
+    );
+  }
+};
+
+#12 - Rendering a Class Component to the DOM
+class TypesOfFood extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <div>
+        <h1>Types of Food:</h1>
+          <Fruits />
+          <Vegetables />
+      </div>
+    );
+  }
+};
+
+ReactDOM.render(<TypesOfFood/>, document.getElementById("challenge-node"))
+
+#13 - Writing a React Component from Scratch - Done
+
+#14 - Passing Props to a Stateless Functional Component (CurrentDate)
+const CurrentDate = (props) => {
+  return (
+    <div>
+      <p>The current date is: {props.date} </p>
+    </div>
+  );
+};
+
+class Calendar extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <div>
+        <h3>What date is it?</h3>
+        <CurrentDate date = {Date()}/>
+      </div>
+    );
+  }
+};
+
+#15 - Pass an Array as Props (To-Do List)
 
 
 
