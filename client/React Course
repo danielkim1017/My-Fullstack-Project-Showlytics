@@ -202,6 +202,130 @@ class Calendar extends React.Component {
 };
 
 #15 - Pass an Array as Props (To-Do List)
+const List = (props) => {
+  return <p>{props.tasks.join(', ')}</p>
+};
+
+class ToDo extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <div>
+        <h1>To Do Lists</h1>
+        <h2>Today</h2>
+        <List tasks = {["Workout", "Grocery Shop"]}/>
+        <h2>Tomorrow</h2>
+        <List tasks = {["Repair Car", "Order New Bags", "React Course"]}/>
+      </div>
+    );
+  }
+};
+
+#16 - Using Default Props
+const ShoppingCart = (props) => {
+  return (
+    <div>
+      <h1>Shopping Cart Component</h1>
+    </div>
+  )
+};
+ShoppingCart.defaultProps = {items: 0}
+
+#17 - Overriding Default Props
+const Items = (props) => {
+  return <h1>Current Quantity of Items in Cart: {props.quantity}</h1>
+}
+
+Items.defaultProps = {
+  quantity: 0
+}
+
+class ShoppingCart extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return <Items quantity = {10}/>
+  }
+};
+
+#18 - Using PropTypes to Define the Props You Expect
+const Items = (props) => {
+  return <h1>Current Quantity of Items in Cart: {props.quantity}</h1>
+};
+
+Items.propTypes = {quantity: PropTypes.number.isRequired}
+
+Items.defaultProps = {
+  quantity: 0
+};
+
+class ShoppingCart extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return <Items />
+  }
+};
+
+#19 - Accessing Props Using this.props
+ class App extends React.Component {
+  constructor(props) {
+    super(props);
+
+  }
+  render() {
+    return (
+        <div>
+            <Welcome name = "Name" />
+        </div>
+    );
+  }
+};
+
+class Welcome extends React.Component {
+  constructor(props) {
+    super(props);
+
+  }
+  render() {
+    return (
+        <div>
+        <p>Hello, <strong>{this.props.name}</strong>!</p>
+        </div>
+    );
+  }
+};
+
+#20 - Reviewing Concepts (Scratch Work)
+class CampSite extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <div>
+        <Camper/>
+      </div>
+    );
+  }
+};
+const Camper = (props) => {
+  return (
+    <div>
+    <p>{props.name}</p>
+    </div>
+  )
+}
+Camper.propTypes = {name: PropTypes.string.isRequired}
+
+Camper.defaultProps = {
+  name :'CamperBot'
+}
+
 
 
 
